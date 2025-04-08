@@ -139,11 +139,10 @@ class _SignInScreenState extends State<SignInScreen> {
                           onPressed: () {
                             if (_formSignInKey.currentState!.validate() &&
                                 rememberPassword) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Processing Data'),
-                                ),
-                              );
+                              Navigator.pushNamed(
+                                context,
+                                '/home',
+                              ); // OU remplace '/home' par ta page directement
                             } else if (!rememberPassword) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -154,6 +153,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               );
                             }
                           },
+
                           child: const Text('Sign up'),
                         ),
                       ),
